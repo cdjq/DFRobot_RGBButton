@@ -34,7 +34,10 @@ void setup(void)
 {
   Serial.begin(115200);
 
-  // Init the sensor
+  /**
+   * @brief Init function
+   * @return bool type, true if successful, false if error
+   */
   while( ! RGBButton.begin() ){
     Serial.println("Communication with device failed, please check connection!");
     delay(3000);
@@ -54,14 +57,13 @@ void loop()
    * @n        false - 按键未按下
    */
   if( RGBButton.getButtonStatus() ) {
-    Serial.println("Button press!");
     /**
      * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
      * @param color - 七种基础颜色以及白黑(白黑对应亮灭)对应的值: 
      * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
      * @return None
      */
-    RGBButton.setRGBByGeneral(RGBButton.eRed);
+    RGBButton.setRGBGeneralColor(RGBButton.eRed);
     delay(100);
   } else {
     rValue = (abs(sin(3.14 * t / 180))) * 255;

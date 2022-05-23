@@ -16,7 +16,7 @@
 #include <Wire.h>
 
 
-#define ENABLE_DBG   //!< Open this macro and you can see the details of the program
+// #define ENABLE_DBG   //!< Open this macro and you can see the details of the program
 #ifdef ENABLE_DBG
   #define DBG(...) {Serial.print("[");Serial.print(__FUNCTION__); Serial.print("(): "); Serial.print(__LINE__); Serial.print(" ] "); Serial.println(__VA_ARGS__);}
 #else
@@ -74,7 +74,7 @@ public:
    * @fn DFRobot_RGBButton
    * @brief Constructor
    * @param pWire - Wire object is defined in Wire.h, so just use &Wire and the methods in Wire can be pointed to and used
-   * @param i2cAddr - SCD41 I2C address.
+   * @param i2cAddr - RGBButton I2C address.
    * @return None
    */
   DFRobot_RGBButton(TwoWire *pWire=&Wire, uint8_t i2cAddr=RGBBUTTON_DEFAULT_I2C_ADDR);
@@ -89,13 +89,13 @@ public:
 /********************************* function ***********************************/
 
   /**
-   * @fn setRGBByGeneral
+   * @fn setRGBGeneralColor
    * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
    * @param color - 七种基础颜色以及白黑对应的值: 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
-  void setRGBByGeneral(eGeneralRGBValue_t color);
+  void setRGBGeneralColor(eGeneralRGBValue_t color);
 
   /**
    * @fn setRGBByValue

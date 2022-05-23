@@ -41,7 +41,7 @@ bool DFRobot_RGBButton::begin(void)
 
 /********************************** function **************************************/
 
-void DFRobot_RGBButton::setRGBByGeneral(eGeneralRGBValue_t color)
+void DFRobot_RGBButton::setRGBGeneralColor(eGeneralRGBValue_t color)
 {
   uint8_t rgbBuf[3];
   rgbBuf[0] = (color >> 16) & 0xFF;

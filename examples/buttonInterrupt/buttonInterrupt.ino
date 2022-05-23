@@ -31,7 +31,7 @@ DFRobot_RGBButton RGBButton(&Wire, /*I2CAddr*/ 0x2A);
 
 
 /* Interrupt flag */
-volatile uint8_t flag = 0, temp;
+volatile uint8_t flag = 0, temp = 0;
 /* External interrupt flag */
 void interrupt()
 {
@@ -40,6 +40,7 @@ void interrupt()
     flag = 3;
   } else {
     flag = temp;
+    temp = 4;
   }
 }
 
@@ -47,7 +48,10 @@ void setup(void)
 {
   Serial.begin(115200);
 
-  // Init the sensor
+  /**
+   * @brief Init function
+   * @return bool type, true if successful, false if error
+   */
   while( ! RGBButton.begin() ){
     Serial.println("Communication with device failed, please check connection!");
     delay(3000);
@@ -102,11 +106,26 @@ void loop()
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
-  RGBButton.setRGBByGeneral(colorBuf[flag]);
+  RGBButton.setRGBGeneralColor(colorBuf[flag]);
+
+  // 闪烁延时，增大count的值从而增加闪烁间隔
+  size_t count = 1600;
+  for (size_t i = 0; i < count; i++) {
+    for (size_t j = 0; j < count; j++) {
+      if (3 == flag) {   // 当按键按下，中断产生，设置为白色
+        RGBButton.setRGBGeneralColor(colorBuf[flag]);
+      }
+      if (4 == temp) {   // 当按键释放，中断产生，设置回按下之前的颜色
+        temp = 0;
+        RGBButton.setRGBGeneralColor(colorBuf[flag]);
+      }
+    }
+  }
+
+  // RGB灯循环切换红绿蓝三色
   if(2 > flag) {
     flag += 1;
   } else if (2 == flag) {
     flag = 0;
   }
-  delay(100);
 }
