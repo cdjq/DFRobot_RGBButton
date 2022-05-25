@@ -106,18 +106,18 @@ void loop()
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
-  RGBButton.setRGBGeneralColor(colorBuf[flag]);
+  RGBButton.setRGBColor(colorBuf[flag]);
 
   // 闪烁延时，增大count的值从而增加闪烁间隔
   size_t count = 1600;
   for (size_t i = 0; i < count; i++) {
     for (size_t j = 0; j < count; j++) {
       if (3 == flag) {   // 当按键按下，中断产生，设置为白色
-        RGBButton.setRGBGeneralColor(colorBuf[flag]);
+        RGBButton.setRGBColor(colorBuf[flag]);
       }
       if (4 == temp) {   // 当按键释放，中断产生，设置回按下之前的颜色
         temp = 0;
-        RGBButton.setRGBGeneralColor(colorBuf[flag]);
+        RGBButton.setRGBColor(colorBuf[flag]);
       }
     }
   }

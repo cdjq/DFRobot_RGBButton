@@ -42,7 +42,7 @@ def int_callback(channel):
     flag = 3
   else :
     flag = temp
-  # print(flag)
+    temp = 4
 
 
 def setup():
@@ -60,15 +60,26 @@ def setup():
 
 
 def loop():
-  global flag
+  global flag, temp
 
   '''
     # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
     # @param color - 七种基础颜色以及白黑对应的值: 
     # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
   '''
-  RGBButton.set_RGB_by_general(color_buf[flag])
+  RGBButton.set_RGB_color(color_buf[flag])
 
+  # 闪烁延时，增大count的值从而增加闪烁间隔
+  count = 1600
+  for i in range(0, count):
+    for j in range(0, count):
+      if 3 == flag:   # 当按键按下，中断产生，设置为白色
+        RGBButton.set_RGB_color(color_buf[flag])
+      if 4 == temp:   # 当按键释放，中断产生，设置回按下之前的颜色
+        temp = 0
+        RGBButton.set_RGB_color(color_buf[flag])
+
+  # RGB灯循环切换红绿蓝三色
   if 2 > flag :
     flag += 1
   elif 2 == flag :

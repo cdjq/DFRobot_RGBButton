@@ -52,20 +52,18 @@ def loop():
   '''
   if RGBButton.get_button_status() :
     flag = 1
-    print("Button press!")
 
     '''
       # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
       # @param color - 七种基础颜色以及白黑对应的值: 
       # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
     '''
-    RGBButton.set_RGB_by_general(RGBButton.e_red)
+    RGBButton.set_RGB_color(RGBButton.e_red)
 
     time.sleep(0.05)
   elif 1 == flag  :
     flag = 0
-    print("Button release!")
-    RGBButton.set_RGB_by_general(RGBButton.e_black)   # 按键释放后灭灯
+    RGBButton.set_RGB_color(RGBButton.e_black)   # 按键释放后灭灯
 
 
 if __name__ == "__main__":

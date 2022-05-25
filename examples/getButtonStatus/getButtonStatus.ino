@@ -64,10 +64,10 @@ void loop()
      * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
      * @return None
      */
-    RGBButton.setRGBGeneralColor(RGBButton.eRed);
+    RGBButton.setRGBColor(RGBButton.eRed);
     delay(50);
   } else if( 1 == flag ) {
     flag = 0;
-    RGBButton.setRGBGeneralColor(RGBButton.eBlack);   // 按键释放后灭灯
+    RGBButton.setRGBColor(RGBButton.eBlack);   // 按键释放后灭灯
   }
 }

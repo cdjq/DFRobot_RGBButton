@@ -41,7 +41,7 @@ bool DFRobot_RGBButton::begin(void)
 
 /********************************** function **************************************/
 
-void DFRobot_RGBButton::setRGBGeneralColor(eGeneralRGBValue_t color)
+void DFRobot_RGBButton::setRGBColor(eGeneralRGBValue_t color)
 {
   uint8_t rgbBuf[3];
   rgbBuf[0] = (color >> 16) & 0xFF;
@@ -50,7 +50,7 @@ void DFRobot_RGBButton::setRGBGeneralColor(eGeneralRGBValue_t color)
   writeReg(RGBBUTTON_RED_REG, rgbBuf, 3);
 }
 
-void DFRobot_RGBButton::setRGBByValue(uint8_t r, uint8_t g, uint8_t b)
+void DFRobot_RGBButton::setRGBColor(uint8_t r, uint8_t g, uint8_t b)
 {
   uint8_t rgbBuf[3];
   rgbBuf[0] = r;

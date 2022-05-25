@@ -46,19 +46,15 @@ To use the library, first download the library file, paste it into the directory
     def begin(self):
 
     '''!
-      @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
+      @brief 设置七种基础颜色以及白黑(白黑对应亮灭) 或 用RGB值设置对应颜色
       @param color - 七种基础颜色以及白黑对应的值: 
       @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
-    '''
-    def set_RGB_by_general(self, color):
-
-    '''!
-      @brief 用RGB值设置对应颜色
       @param r - 红灯的脉宽值
       @param g - 绿灯的脉宽值
       @param b - 蓝灯的脉宽值
     '''
-    def set_RGB_by_value(self, r, g, b):
+    def set_RGB_color(self, color):
+    def set_RGB_color(self, r, g, b):
 
     '''!
       @brief 获取模块按键状态

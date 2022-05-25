@@ -13,8 +13,7 @@ DFRobot_RGBButton	KEYWORD1
 #######################################
 
 begin	KEYWORD2
-setRGBGeneralColor	KEYWORD2
-setRGBByValue	KEYWORD2
+setRGBColor	KEYWORD2
 getButtonStatus	KEYWORD2
 getI2CAddr	KEYWORD2
 getPID	KEYWORD2

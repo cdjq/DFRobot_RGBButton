@@ -63,7 +63,7 @@ void loop()
      * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
      * @return None
      */
-    RGBButton.setRGBGeneralColor(RGBButton.eRed);
+    RGBButton.setRGBColor(RGBButton.eRed);
     delay(100);
   } else {
     rValue = (abs(sin(3.14 * t / 180))) * 255;
@@ -77,7 +77,7 @@ void loop()
      * @param b - 蓝灯的脉宽值
      * @return None
      */
-    RGBButton.setRGBByValue(/*r=*/rValue, /*g=*/gValue, /*b=*/bValue);
+    RGBButton.setRGBColor(/*r=*/rValue, /*g=*/gValue, /*b=*/bValue);
     delay(100);
   }
 }

@@ -60,9 +60,9 @@ void setup(void)
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
-  RGBButton1.setRGBGeneralColor(RGBButton1.eWhite);
-  RGBButton2.setRGBGeneralColor(RGBButton2.eWhite);
-  RGBButton3.setRGBGeneralColor(RGBButton3.eWhite);
+  RGBButton1.setRGBColor(RGBButton1.eWhite);
+  RGBButton2.setRGBColor(RGBButton2.eWhite);
+  RGBButton3.setRGBColor(RGBButton3.eWhite);
 }
 
 uint8_t flag1 = 0, flag2 = 0, flag3 = 0;
@@ -77,28 +77,28 @@ void loop()
    */
   if( RGBButton1.getButtonStatus() ) {   // 按键1, 按下亮红色
     flag1 = 1;
-    RGBButton1.setRGBGeneralColor(RGBButton1.eRed);
+    RGBButton1.setRGBColor(RGBButton1.eRed);
     delay(50);
   } else if( 1 == flag1 ) {
     flag1 = 0;
-    RGBButton1.setRGBGeneralColor(RGBButton1.eWhite);
+    RGBButton1.setRGBColor(RGBButton1.eWhite);
   }
 
   if( RGBButton2.getButtonStatus() ) {   // 按键2, 按下亮绿色
     flag2 = 1;
-    RGBButton2.setRGBGeneralColor(RGBButton2.eGreen);
+    RGBButton2.setRGBColor(RGBButton2.eGreen);
     delay(50);
   } else if( 1 == flag2 ) {
     flag2 = 0;
-    RGBButton2.setRGBGeneralColor(RGBButton2.eWhite);
+    RGBButton2.setRGBColor(RGBButton2.eWhite);
   }
 
   if( RGBButton3.getButtonStatus() ) {   // 按键3, 按下亮蓝色
     flag3 = 1;
-    RGBButton3.setRGBGeneralColor(RGBButton3.eBlue);
+    RGBButton3.setRGBColor(RGBButton3.eBlue);
     delay(50);
   } else if( 1 == flag3 ) {
     flag3 = 0;
-    RGBButton3.setRGBGeneralColor(RGBButton3.eWhite);
+    RGBButton3.setRGBColor(RGBButton3.eWhite);
   }
 }

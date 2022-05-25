@@ -54,9 +54,9 @@ def setup():
     # @param color - 七种基础颜色以及白黑对应的值: 
     # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
   '''
-  RGBButton1.set_RGB_by_general(RGBButton1.e_white)
-  RGBButton2.set_RGB_by_general(RGBButton2.e_white)
-  RGBButton3.set_RGB_by_general(RGBButton3.e_white)
+  RGBButton1.set_RGB_color(RGBButton1.e_white)
+  RGBButton2.set_RGB_color(RGBButton2.e_white)
+  RGBButton3.set_RGB_color(RGBButton3.e_white)
 
 
 def loop():
@@ -69,33 +69,27 @@ def loop():
   '''
   if RGBButton1.get_button_status() :   # 按键1, 按下亮红色
     flag1 = 1
-    print("Button1 press!")
-    RGBButton1.set_RGB_by_general(RGBButton1.e_red)
+    RGBButton1.set_RGB_color(RGBButton1.e_red)
     time.sleep(0.05)
   elif 1 == flag1  :
     flag1 = 0
-    print("Button1 release!")
-    RGBButton1.set_RGB_by_general(RGBButton1.e_white)
+    RGBButton1.set_RGB_color(RGBButton1.e_white)
 
   if RGBButton2.get_button_status() :   # 按键2, 按下亮绿色
     flag2 = 1
-    print("Button2 press!")
-    RGBButton2.set_RGB_by_general(RGBButton2.e_green)
+    RGBButton2.set_RGB_color(RGBButton2.e_green)
     time.sleep(0.05)
   elif 1 == flag2  :
     flag2 = 0
-    print("Button2 release!")
-    RGBButton2.set_RGB_by_general(RGBButton2.e_white)
+    RGBButton2.set_RGB_color(RGBButton2.e_white)
 
   if RGBButton3.get_button_status() :   # 按键3, 按下亮蓝色
     flag3 = 1
-    print("Button3 press!")
-    RGBButton3.set_RGB_by_general(RGBButton3.e_blue)
+    RGBButton3.set_RGB_color(RGBButton3.e_blue)
     time.sleep(0.05)
   elif 1 == flag3  :
     flag3 = 0
-    print("Button3 release!")
-    RGBButton3.set_RGB_by_general(RGBButton3.e_white)
+    RGBButton3.set_RGB_color(RGBButton3.e_white)
 
 
 if __name__ == "__main__":

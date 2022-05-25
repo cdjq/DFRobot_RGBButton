@@ -90,29 +90,24 @@ class DFRobot_RGBButton(object):
             ret = False
         return ret
 
-    def set_RGB_by_general(self, color):
+    def set_RGB_color(self, *args):
         '''!
-          @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
+          @brief 设置七种基础颜色以及白黑(白黑对应亮灭) 或 用RGB值设置对应颜色
           @param color - 七种基础颜色以及白黑对应的值: 
           @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
-        '''
-        rgb_buf = [0] * 3
-        rgb_buf[0] = (color >> 16) & 0xFF
-        rgb_buf[1] = (color >> 8) & 0xFF
-        rgb_buf[2] = color & 0xFF
-        self._write_reg(RGBBUTTON_RED_REG, rgb_buf)
-
-    def set_RGB_by_value(self, r, g, b):
-        '''!
-          @brief 用RGB值设置对应颜色
           @param r - 红灯的脉宽值
           @param g - 绿灯的脉宽值
           @param b - 蓝灯的脉宽值
         '''
         rgb_buf = [0] * 3
-        rgb_buf[0] = r
-        rgb_buf[1] = g
-        rgb_buf[2] = b
+        if 1 == len(args):
+          rgb_buf[0] = (args[0] >> 16) & 0xFF
+          rgb_buf[1] = (args[0] >> 8) & 0xFF
+          rgb_buf[2] = args[0] & 0xFF
+        elif 3 == len(args):
+          rgb_buf[0] = args[0]
+          rgb_buf[1] = args[1]
+          rgb_buf[2] = args[2]
         self._write_reg(RGBBUTTON_RED_REG, rgb_buf)
 
     def get_button_status(self):

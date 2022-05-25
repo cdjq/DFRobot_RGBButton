@@ -52,15 +52,12 @@ def loop():
     # @retval   false - 按键未按下
   '''
   if RGBButton.get_button_status() :
-    print("Button press!")
-
     '''
       # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
       # @param color - 七种基础颜色以及白黑对应的值: 
       # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
     '''
-    RGBButton.set_RGB_by_general(RGBButton.e_red)
-
+    RGBButton.set_RGB_color(RGBButton.e_red)
     time.sleep(0.1)
   else :
     r_value = int((abs(sin(3.14 * t / 180))) * 255)
@@ -74,7 +71,7 @@ def loop():
       # @param g - 绿灯的脉宽值
       # @param b - 蓝灯的脉宽值
     '''
-    RGBButton.set_RGB_by_value(r=r_value, g=g_value, b=b_value)
+    RGBButton.set_RGB_color(r=r_value, g=g_value, b=b_value)
 
     time.sleep(0.1)
 

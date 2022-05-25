@@ -56,23 +56,17 @@ RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设�
   bool begin(void);
 
   /**
-   * @fn setRGBGeneralColor
-   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
+   * @fn setRGBColor
+   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)或者用RGB值设置对应颜色
    * @param color - 七种基础颜色以及白黑对应的值: 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
-   * @return None
-   */
-  void setRGBGeneralColor(eGeneralRGBValue_t color);
-
-  /**
-   * @fn setRGBByValue
-   * @brief 用RGB值设置对应颜色
    * @param r - 红灯的脉宽值
    * @param g - 绿灯的脉宽值
    * @param b - 蓝灯的脉宽值
    * @return None
    */
-  void setRGBByValue(uint8_t r, uint8_t g, uint8_t b);
+  void setRGBColor(eGeneralRGBValue_t color);
+  void setRGBColor(uint8_t r, uint8_t g, uint8_t b);
 
   /**
    * @fn getButtonStatus
