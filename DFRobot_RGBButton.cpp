@@ -1,7 +1,7 @@
 /*!
  * @file DFRobot_RGBButton.cpp
  * @brief  Define the infrastructure DFRobot_RGBButton class
- * @n 
+ * @details  通过I2C控制RGB按钮模块，设置RGB灯颜色，获取按钮按下状态
  * @copyright Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license The MIT License (MIT)
  * @author [qsjhyy](yihuan.huang@dfrobot.com)

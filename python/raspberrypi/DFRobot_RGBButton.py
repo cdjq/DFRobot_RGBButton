@@ -119,8 +119,8 @@ class DFRobot_RGBButton(object):
         '''!
           @brief 获取模块按键状态
           @return 模块当前的按键状态:
-          @n        true - 按键按下
-          @n        false - 按键未按下
+          @retval   true - 按键按下
+          @retval   false - 按键未按下
         '''
         button_status = False
         if 1 == self._read_reg(RGBBUTTON_BUTTON_SIGNAL_REG, 1)[0] :

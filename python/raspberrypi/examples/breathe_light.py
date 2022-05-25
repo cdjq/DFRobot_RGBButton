@@ -48,8 +48,8 @@ def loop():
   '''
     # @brief 获取模块按键状态
     # @return 模块当前的按键状态:
-    # @n        true - 按键按下
-    # @n        false - 按键未按下
+    # @retval   true - 按键按下
+    # @retval   false - 按键未按下
   '''
   if RGBButton.get_button_status() :
     print("Button press!")

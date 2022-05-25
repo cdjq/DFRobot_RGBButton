@@ -36,6 +36,50 @@ There two methods:
 
 ```C++
 
+  /**
+   * @fn DFRobot_RGBButton
+   * @brief Constructor
+   * @param pWire - Wire object is defined in Wire.h, so just use &Wire and the methods in Wire can be pointed to and used
+   * @param i2cAddr - RGBButton I2C address.
+   * @return None
+   */
+  DFRobot_RGBButton(TwoWire *pWire=&Wire, uint8_t i2cAddr=RGBBUTTON_DEFAULT_I2C_ADDR);
+
+  /**
+   * @fn begin
+   * @brief Init function
+   * @return bool type, true if successful, false if error
+   */
+  bool begin(void);
+
+  /**
+   * @fn setRGBGeneralColor
+   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
+   * @param color - 七种基础颜色以及白黑对应的值: 
+   * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
+   * @return None
+   */
+  void setRGBGeneralColor(eGeneralRGBValue_t color);
+
+  /**
+   * @fn setRGBByValue
+   * @brief 用RGB值设置对应颜色
+   * @param r - 红灯的脉宽值
+   * @param g - 绿灯的脉宽值
+   * @param b - 蓝灯的脉宽值
+   * @return None
+   */
+  void setRGBByValue(uint8_t r, uint8_t g, uint8_t b);
+
+  /**
+   * @fn getButtonStatus
+   * @brief 获取模块按键状态
+   * @return 模块当前的按键状态:
+   * @retval   true - 按键按下
+   * @retval   false - 按键未按下
+   */
+  bool getButtonStatus(void);
+
 ```
 
 

@@ -1,7 +1,7 @@
 /*!
  * @file  DFRobot_RGBButton.h
  * @brief  Define infrastructure of DFRobot_RGBButton class
- * @details  
+ * @details  通过I2C控制RGB按钮模块，设置RGB灯颜色，获取按钮按下状态
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -9,8 +9,8 @@
  * @date  2022-05-16
  * @url  https://github.com/DFRobot/DFRobot_RGBButton
  */
-#ifndef __DFRobot_RGBButton_H__
-#define __DFRobot_RGBButton_H__
+#ifndef __DFROBOT_RGBBUTTON_H__
+#define __DFROBOT_RGBBUTTON_H__
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -25,7 +25,7 @@
 
 
 #define RGBBUTTON_DEFAULT_I2C_ADDR    uint8_t(0x2A)   ///< rgbbutton default i2c addr
-#define RGBBUTTON_PART_ID             uint16_t(0x43DF)   ///< RGBButton chip ID
+#define RGBBUTTON_PART_ID          uint16_t(0x43DF)   ///< RGBButton chip ID
 
 /* RGBButton register address */
 #define RGBBUTTON_I2C_ADDR_REG        uint8_t(0x00)   ///< RGBButton I2C ADDR REG
@@ -111,8 +111,8 @@ public:
    * @fn getButtonStatus
    * @brief 获取模块按键状态
    * @return 模块当前的按键状态:
-   * @n        true - 按键按下
-   * @n        false - 按键未按下
+   * @retval   true - 按键按下
+   * @retval   false - 按键未按下
    */
   bool getButtonStatus(void);
 
