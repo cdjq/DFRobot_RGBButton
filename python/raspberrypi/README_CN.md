@@ -38,10 +38,10 @@ RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设�
 ```python
 
     '''!
-      @brief Initialize sensor
-      @return  Return init status
-      @retval True indicate initialization succeed
-      @retval False indicate initialization failed
+      @brief 初始化传感器
+      @return  返回初始状态
+      @retval True 表示初始化成功
+      @retval False 表示初始化失败
     '''
     def begin(self):
 
@@ -93,3 +93,4 @@ RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设�
 ## 创作者
 
 Written by qsjhyy(yihuan.huang@dfrobot.com), 2022. (Welcome to our [website](https://www.dfrobot.com/))
+

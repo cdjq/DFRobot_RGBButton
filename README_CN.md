@@ -9,6 +9,7 @@ RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设�
 ## 产品链接 (https://www.dfrobot.com.cn/)
     SKU: DFR0991
 
+
 ## 目录
 
 * [概述](#概述)
@@ -41,17 +42,17 @@ RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设�
 
   /**
    * @fn DFRobot_RGBButton
-   * @brief Constructor
-   * @param pWire - Wire object is defined in Wire.h, so just use &Wire and the methods in Wire can be pointed to and used
-   * @param i2cAddr - RGBButton I2C address.
+   * @brief 构造函数
+   * @param pWire - Wire对象是在Wire.h中定义的，所以只要使用&Wire，就可以指向和使用Wire中的方法
+   * @param i2cAddr - RGB 按钮的 I2C 地址
    * @return None
    */
   DFRobot_RGBButton(TwoWire *pWire=&Wire, uint8_t i2cAddr=RGBBUTTON_DEFAULT_I2C_ADDR);
 
   /**
    * @fn begin
-   * @brief Init function
-   * @return bool type, true if successful, false if error
+   * @brief 初始化函数
+   * @return Bool类型，成功时为true，错误时为false
    */
   bool begin(void);
 
