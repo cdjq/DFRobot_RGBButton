@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*
 '''!
   @file  breathe_light.py
-  @brief  呼吸灯功能演示
-  @details  按键RGB灯呈现彩色呼吸灯闪烁, 按键按下则变为红色
+  @brief  Breathing light function demonstration
+  @details  The button RGB LED presents a colorful breathing light effect, and turns red when the button is pressed.
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -46,15 +46,15 @@ def setup():
 def loop():
   global t, r_value, g_value, b_value
   '''
-    # @brief 获取模块按键状态
-    # @return 模块当前的按键状态:
-    # @retval   true - 按键按下
-    # @retval   false - 按键未按下
+    # @brief Get button status
+    # @return The current button status:
+    # @retval   true - the button is pressed
+    # @retval   false - the button is not pressed
   '''
   if RGBButton.get_button_status() :
     '''
-      # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-      # @param color - 七种基础颜色以及白黑对应的值: 
+      # @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+      # @param color - The corresponding values of the basic seven colors and white & black: 
       # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
     '''
     RGBButton.set_RGB_color(RGBButton.e_red)
@@ -66,10 +66,10 @@ def loop():
     t += 1
 
     '''
-      # @brief 用RGB值设置对应颜色
-      # @param r - 红灯的脉宽值
-      # @param g - 绿灯的脉宽值
-      # @param b - 蓝灯的脉宽值
+      # @brief Set the corresponding colors by setting RGB values
+      # @param r - pulse width value of red LED
+      # @param g - pulse width value of green LED
+      # @param b - pulse width value of blue LED
     '''
     RGBButton.set_RGB_color(r=r_value, g=g_value, b=b_value)
 
@@ -78,7 +78,7 @@ def loop():
 
 if __name__ == "__main__":
   global t, r_value, g_value, b_value
-  t = 0   # rgb值的基础变换量
+  t = 0   # Basic transformations of RGB values
   r_value, g_value, b_value = 0, 0, 0
   setup()
   while True:
