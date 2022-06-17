@@ -1,6 +1,6 @@
 /*!
  * @file  buttonCascade.ino
- * @brief  Button cascade fucntion demonstration
+ * @brief  Button cascade function demonstration
  * @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default, after the button is pressed, they change to red, green, and blue LEDs correspondingly.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
