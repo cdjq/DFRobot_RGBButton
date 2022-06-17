@@ -1,7 +1,7 @@
 /*!
  * @file  buttonInterrupt.ino
- * @brief  按键中断例程
- * @details  RGB灯循环切换红绿蓝三色，按键按下后亮白色。
+ * @brief  Button interrupt rountine
+ * @details  The RGB LED rotates the colors of red, green and blue repeatedly, and shows white when the button is pressed.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -88,7 +88,7 @@ void setup(void)
      * ---------------------------------------------------------------------------------------------------------------------------------------------
      */
     #if defined(ARDUINO_AVR_LEONARDO)
-      attachInterrupt(/*Interrupt No*/4, interrupt, CHANGE);   // Leonardo的I2C引脚为2（SDA）和3（SCL），所以不能使用0,1两号中断。本示例使用4号中断，引脚为Leonardo(7)
+      attachInterrupt(/*Interrupt No*/4, interrupt, CHANGE);   // Leonardo's I2C pins are 2 (SDA) and 3 (SCL), so interrupt 0 and 1 can't be used. This sample uses interrupt 4 and pin Leonardo(7)
     #else
       attachInterrupt(/*Interrupt No*/0, interrupt, CHANGE);   // Open the external interrupt 0, connect INT to the digital pin of the main control: 
                                                              // UNO(2), Mega2560(2), microbit(P0).
@@ -101,28 +101,28 @@ DFRobot_RGBButton::eGeneralRGBValue_t colorBuf[4] = {RGBButton.eRed, RGBButton.e
 void loop()
 {
   /**
-   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-   * @param color - 七种基础颜色以及白黑(白黑对应亮灭)对应的值: 
+   * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+   * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to turning LED on and off respectively): 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
   RGBButton.setRGBColor(colorBuf[flag]);
 
-  // 闪烁延时，增大count的值从而增加闪烁间隔
+  // Blink delay, increase the value of count to increase blink interval
   size_t count = 1600;
   for (size_t i = 0; i < count; i++) {
     for (size_t j = 0; j < count; j++) {
-      if (3 == flag) {   // 当按键按下，中断产生，设置为白色
+      if (3 == flag) {   // When the button is pressed, an interrupt occurs, change to white
         RGBButton.setRGBColor(colorBuf[flag]);
       }
-      if (4 == temp) {   // 当按键释放，中断产生，设置回按下之前的颜色
+      if (4 == temp) {   // When the button is released, an interrupt occurs, change back to the color before it was pressed
         temp = 0;
         RGBButton.setRGBColor(colorBuf[flag]);
       }
     }
   }
 
-  // RGB灯循环切换红绿蓝三色
+  // The RGB LED rotates the colors of red, green and blue repeatedly
   if(2 > flag) {
     flag += 1;
   } else if (2 == flag) {
