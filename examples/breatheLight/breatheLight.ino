@@ -1,7 +1,7 @@
 /*!
  * @file  breatheLight.ino
- * @brief  呼吸灯功能演示
- * @details  按键RGB灯呈现彩色呼吸灯闪烁, 按键按下则变为红色
+ * @brief  Breathing light function demonstration
+ * @details  The button RGB LED presents a breathing light effect, and turns red when the button is pressed.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -45,21 +45,21 @@ void setup(void)
   Serial.println("Begin ok!\n");
 }
 
-int t = 0;   // rgb值的基础变换量
+int t = 0;   // Basic transformations of RGB values
 uint8_t rValue = 0, gValue = 0, bValue = 0;
 
 void loop()
 {
   /**
-   * @brief 获取模块按键状态
-   * @return 模块当前的按键状态:
-   * @retval   true - 按键按下
-   * @retval   false - 按键未按下
+   * @brief Get button status
+   * @return The current button status:
+   * @retval   true - the button is pressed
+   * @retval   false - the button is not pressed
    */
   if( RGBButton.getButtonStatus() ) {
     /**
-     * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-     * @param color - 七种基础颜色以及白黑(白黑对应亮灭)对应的值: 
+     * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+     * @param color - The corresponding values of the basic seven colors and white & black: 
      * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
      * @return None
      */
@@ -71,10 +71,10 @@ void loop()
     bValue = (abs(sin(3.14 * (t + 120) / 180))) * 255;
     t += 1;
     /**
-     * @brief 用RGB值设置对应颜色
-     * @param r - 红灯的脉宽值
-     * @param g - 绿灯的脉宽值
-     * @param b - 蓝灯的脉宽值
+     * @brief Set the corresponding colors by setting RGB values
+     * @param r - pulse width value for red LED
+     * @param g - pulse width value for green LED
+     * @param b - pulse width value for blue LED
      * @return None
      */
     RGBButton.setRGBColor(/*r=*/rValue, /*g=*/gValue, /*b=*/bValue);
