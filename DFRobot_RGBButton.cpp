@@ -1,7 +1,7 @@
 /*!
  * @file DFRobot_RGBButton.cpp
  * @brief  Define the infrastructure DFRobot_RGBButton class
- * @details  通过I2C控制RGB按钮模块，设置RGB灯颜色，获取按钮按下状态
+ * @details  Use I2C to control the RGB button module, set RGB LED color and get button press status.
  * @copyright Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license The MIT License (MIT)
  * @author [qsjhyy](yihuan.huang@dfrobot.com)
@@ -70,7 +70,7 @@ uint8_t DFRobot_RGBButton::getI2CAddr(void)
 {
   uint8_t temp, i2cAddr;
   temp = _deviceAddr;
-  _deviceAddr = 0;   // I2C 协议通用访问地址
+  _deviceAddr = 0;   // Common access address of I2C protocol
   readReg(RGBBUTTON_I2C_ADDR_REG, &i2cAddr, 1);
   _deviceAddr = temp;
   if(i2cAddr != _deviceAddr) {
