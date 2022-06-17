@@ -1,7 +1,7 @@
 /*!
  * @file  getButtonStatus.ino
- * @brief  按键功能演示
- * @details  按键按下亮红灯， 松开灭灯
+ * @brief  Button function demonstration
+ * @details  The LED shows red light when the button is pressed, and is off when released
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -51,16 +51,16 @@ uint8_t flag = 0;
 void loop()
 {
   /**
-   * @brief 获取模块按键状态
-   * @return 模块当前的按键状态:
-   * @retval   true - 按键按下
-   * @retval   false - 按键未按下
+   * @brief Get button status
+   * @return The current button status:
+   * @retval   true - the button is pressed
+   * @retval   false - the button is not pressed
    */
   if( RGBButton.getButtonStatus() ) {
     flag = 1;
     /**
-     * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-     * @param color - 七种基础颜色以及白黑(白黑对应亮灭)对应的值: 
+     * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+     * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to turning LED on and off respectively): 
      * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
      * @return None
      */
@@ -68,6 +68,6 @@ void loop()
     delay(50);
   } else if( 1 == flag ) {
     flag = 0;
-    RGBButton.setRGBColor(RGBButton.eBlack);   // 按键释放后灭灯
+    RGBButton.setRGBColor(RGBButton.eBlack);   // The LED is off when the button is released
   }
 }
