@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*
 '''!
   @file  button_interrupt.py
-  @brief  按键中断例程
-  @details  RGB灯循环切换红绿蓝三色, 按键按下后亮白色
+  @brief  Button interrupt routine
+  @details  The RGB LED rotates the colors of red, green and blue repeatedly, and shows white when the button is pressed.
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -63,17 +63,17 @@ def loop():
   global flag, temp
 
   '''
-    # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-    # @param color - 七种基础颜色以及白黑对应的值: 
+    # @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+    # @param color - The corresponding values of the basic seven colors and white & black: 
     # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
   '''
   RGBButton.set_RGB_color(color_buf[flag])
 
-  # 闪烁延时，增大count的值从而增加闪烁间隔
+  # Blink delay, increase the value of count to increase blink interval
   count = 1600
   for i in range(0, count):
     for j in range(0, count):
-      if 3 == flag:   # 当按键按下，中断产生，设置为白色
+      if 3 == flag:   # When the button is pressed, an interrupt occurs, change to white
         RGBButton.set_RGB_color(color_buf[flag])
       if 4 == temp:   # 当按键释放，中断产生，设置回按下之前的颜色
         temp = 0
