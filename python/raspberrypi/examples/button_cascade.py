@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*
 '''!
   @file  button_cascade.py
-  @brief  按钮模块级联功能演示
-  @details  3个按钮模块I2C级联，默认情况下三个亮白色，按下按钮后，对应的按钮变为红色、绿色、蓝色。
+  @brief  Button cascade function demonstration
+  @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default, after the button is pressed, they change to red, green, and blue LEDs correspondingly
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -50,8 +50,8 @@ def setup():
   print("RGBButton begin successfully!\n")
 
   '''
-    # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-    # @param color - 七种基础颜色以及白黑对应的值: 
+    # @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+    # @param color - The corresponding values of the basic seven colors and white & black: 
     # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
   '''
   RGBButton1.set_RGB_color(RGBButton1.e_white)
@@ -62,12 +62,12 @@ def setup():
 def loop():
   global flag1, flag2, flag3
   '''
-    # @brief 获取模块按键状态
-    # @return 模块当前的按键状态:
-    # @retval   true - 按键按下
-    # @retval   false - 按键未按下
+    # @brief Get button status
+    # @return The current button status:
+    # @retval   true - the button is pressed
+    # @retval   false - the button is not pressed
   '''
-  if RGBButton1.get_button_status() :   # 按键1, 按下亮红色
+  if RGBButton1.get_button_status() :   # button 1, show red LED when pressed
     flag1 = 1
     RGBButton1.set_RGB_color(RGBButton1.e_red)
     time.sleep(0.05)
@@ -75,7 +75,7 @@ def loop():
     flag1 = 0
     RGBButton1.set_RGB_color(RGBButton1.e_white)
 
-  if RGBButton2.get_button_status() :   # 按键2, 按下亮绿色
+  if RGBButton2.get_button_status() :   # button 2, show green LED when pressed
     flag2 = 1
     RGBButton2.set_RGB_color(RGBButton2.e_green)
     time.sleep(0.05)
@@ -83,7 +83,7 @@ def loop():
     flag2 = 0
     RGBButton2.set_RGB_color(RGBButton2.e_white)
 
-  if RGBButton3.get_button_status() :   # 按键3, 按下亮蓝色
+  if RGBButton3.get_button_status() :   # button 3, show blue LED when pressed
     flag3 = 1
     RGBButton3.set_RGB_color(RGBButton3.e_blue)
     time.sleep(0.05)
