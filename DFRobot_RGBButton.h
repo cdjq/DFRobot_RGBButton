@@ -1,7 +1,7 @@
 /*!
  * @file  DFRobot_RGBButton.h
  * @brief  Define infrastructure of DFRobot_RGBButton class
- * @details  通过I2C控制RGB按钮模块，设置RGB灯颜色，获取按钮按下状态
+ * @details  Use I2C to control the RGB button module, set RGB LED color and get button press status.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -51,19 +51,19 @@ public:
 
   /**
    * @enum  eGeneralRGBValue_t
-   * @brief  一般的七色RGB值和白黑
+   * @brief  RGB values for general seven colors and white & black
    */
   typedef enum
   {
-    eRed    = 0xFF0000,   /**< 红色 */
-    eOrange = 0xFF7F00,   /**< 橙色 */
-    eYellow = 0xFFFF00,   /**< 黄色 */
-    eGreen  = 0x00FF00,   /**< 绿色 */
-    eCyan   = 0x00FFFF,   /**< 青色 */
-    eBlue   = 0x0000FF,   /**< 蓝色 */
-    ePurple = 0x8B00FF,   /**< 紫色 */
-    eWhite  = 0xFFFFFF,   /**< 白色(相当于亮灯) */
-    eBlack  = 0x000000,   /**< 黑色(相当于灭灯) */
+    eRed    = 0xFF0000,   /**< Red */
+    eOrange = 0xFF7F00,   /**< Orange */
+    eYellow = 0xFFFF00,   /**< Yellow */
+    eGreen  = 0x00FF00,   /**< Green */
+    eCyan   = 0x00FFFF,   /**< Indigo */
+    eBlue   = 0x0000FF,   /**< Blue */
+    ePurple = 0x8B00FF,   /**< Purple */
+    eWhite  = 0xFFFFFF,   /**< White (for turning on LED) */
+    eBlack  = 0x000000,   /**< Black (for turning off LED) */
   }eGeneralRGBValue_t;
 
 public:
@@ -90,12 +90,12 @@ public:
 
   /**
    * @fn setRGBColor
-   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)或者用RGB值设置对应颜色
-   * @param color - 七种基础颜色以及白黑对应的值: 
+   * @brief Set the seven basic colors, and white & black (white and black correspond to turning LED on and off respectively) or set the corresponding colors by setting RGB values
+   * @param color - the corresponding values of the seven basic colors and white & black: 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
-   * @param r - 红灯的脉宽值
-   * @param g - 绿灯的脉宽值
-   * @param b - 蓝灯的脉宽值
+   * @param r - pulse width value for red LED
+   * @param g - pulse width of green LED
+   * @param b - pulse width of blue LED
    * @return None
    */
   void setRGBColor(eGeneralRGBValue_t color);
@@ -103,10 +103,10 @@ public:
 
   /**
    * @fn getButtonStatus
-   * @brief 获取模块按键状态
-   * @return 模块当前的按键状态:
-   * @retval   true - 按键按下
-   * @retval   false - 按键未按下
+   * @brief Get button status
+   * @return The current button status:
+   * @retval   true - the button is pressed
+   * @retval   false - the button is not pressed
    */
   bool getButtonStatus(void);
 
@@ -114,15 +114,15 @@ protected:
 
   /**
    * @fn getI2CAddr
-   * @brief 通过I2C标准访问, 获取模块当前的I2C地址
-   * @return 模块当前的I2C地址
+   * @brief Get the current I2C address of the module via I2C standard access
+   * @return The current I2C address of the module
    */
   uint8_t getI2CAddr(void);
 
   /**
    * @fn getPID
-   * @brief 获取模块的产品ID
-   * @return 模块的产品ID
+   * @brief Get the product ID of the module
+   * @return The product ID of the module
    */
   uint16_t getPID(void);
 
