@@ -1,7 +1,7 @@
 # DFRobot_RGBButton
 * [中文版](./README_CN.md)
 
-RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设置RGB灯颜色和读取其按键状态，也可以直接通过中断引脚获取按键状态，地址拨码开关的存在，使得多个按钮可以级联。
+This RGB LED button can be set to different colors via I2C. And the button status can be obtained via either I2C or the interrupt pin. The address DIP switch allows cascading multiple buttons.
 
 ![产品实物图](./resources/images/RGBButton.png)
 
@@ -22,10 +22,10 @@ RGB 按钮模块，一个带有rgb灯的漂亮彩色按钮。可以通过i2c设�
 
 ## Summary
 
-* 系统自定义七种颜色，红橙黄绿青蓝紫；用户也可用rgb值自定义颜色
-* 用户可根据配置PWM信号控制RGB灯的亮度，独立配置周期和脉宽
-* I2C地址可根据拨码开关来设置
-* 按键具有中断通知功能，正常状态为低电平，按键按下为高电平
+* There are seven system-defined colors, red, orange, yellow, green, indigo, blue, and purple; users can also customize the color by changing RGB values
+* Users can control the brightness of RGB LEDs by configuring PWM signal, the period and pulse width are configured independently
+* I2C address can be set by the DIP switch
+* The button can indicate interrupt status, normal button status for low level, pressed button for high level
 
 
 ## Installation
@@ -58,12 +58,12 @@ There two methods:
 
   /**
    * @fn setRGBColor
-   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)或者用RGB值设置对应颜色
-   * @param color - 七种基础颜色以及白黑对应的值: 
+   * @brief Set the seven basic colors, and white & black (white and black correspond to on and off respectively) or set the corresponding color with RGB values
+   * @param color - the corresponding values of the seven basic colors and white & black: 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
-   * @param r - 红灯的脉宽值
-   * @param g - 绿灯的脉宽值
-   * @param b - 蓝灯的脉宽值
+   * @param r - pulse width value for red LED
+   * @param g - pulse width of green LED
+   * @param b - pulse width of blue LED
    * @return None
    */
   void setRGBColor(eGeneralRGBValue_t color);
@@ -71,10 +71,10 @@ There two methods:
 
   /**
    * @fn getButtonStatus
-   * @brief 获取模块按键状态
-   * @return 模块当前的按键状态:
-   * @retval   true - 按键按下
-   * @retval   false - 按键未按下
+   * @brief Get button status
+   * @return The current button status:
+   * @retval   true - the button is pressed
+   * @retval   false - the button is not pressed
    */
   bool getButtonStatus(void);
 
