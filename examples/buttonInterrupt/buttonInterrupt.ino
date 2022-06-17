@@ -1,6 +1,6 @@
 /*!
  * @file  buttonInterrupt.ino
- * @brief  Button interrupt rountine
+ * @brief  Button interrupt routine
  * @details  The RGB LED rotates the colors of red, green and blue repeatedly, and shows white when the button is pressed.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
