@@ -1,7 +1,7 @@
 /*!
  * @file  buttonCascade.ino
- * @brief  按钮模块级联功能演示
- * @details  3个按钮模块I2C级联，默认情况下三个亮白色，按下按钮后，对应的按钮变为红色、绿色、蓝色。
+ * @brief  Button cascade fucntion demonstration
+ * @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default, after the button is pressed, they change to red, green, and blue LEDs correspondingly.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -27,9 +27,9 @@
  * | 1  | 1  | 0  | 0x29 |
  * | 1  | 1  | 1  | 0x2A |
  */
-DFRobot_RGBButton RGBButton1(&Wire, /*I2CAddr*/ 0x23);   // 按钮1
-DFRobot_RGBButton RGBButton2(&Wire, /*I2CAddr*/ 0x24);   // 按钮2
-DFRobot_RGBButton RGBButton3(&Wire, /*I2CAddr*/ 0x25);   // 按钮3
+DFRobot_RGBButton RGBButton1(&Wire, /*I2CAddr*/ 0x23);   // button 1
+DFRobot_RGBButton RGBButton2(&Wire, /*I2CAddr*/ 0x24);   // button 2
+DFRobot_RGBButton RGBButton3(&Wire, /*I2CAddr*/ 0x25);   // button 3
 
 
 void setup(void)
@@ -55,8 +55,8 @@ void setup(void)
   Serial.println("Begin ok!\n");
 
   /**
-   * @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-   * @param color - 七种基础颜色以及白黑(白黑对应亮灭)对应的值: 
+   * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+   * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to turning LED on and off respectively): 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
@@ -70,12 +70,12 @@ uint8_t flag1 = 0, flag2 = 0, flag3 = 0;
 void loop()
 {
   /**
-   * @brief 获取模块按键状态
-   * @return 模块当前的按键状态:
-   * @retval   true - 按键按下
-   * @retval   false - 按键未按下
+   * @brief Get button status
+   * @return The current button status:
+   * @retval   true - the button is pressed
+   * @retval   false - the button is not pressed
    */
-  if( RGBButton1.getButtonStatus() ) {   // 按键1, 按下亮红色
+  if( RGBButton1.getButtonStatus() ) {   // button 1, show red LED when pressed
     flag1 = 1;
     RGBButton1.setRGBColor(RGBButton1.eRed);
     delay(50);
@@ -84,7 +84,7 @@ void loop()
     RGBButton1.setRGBColor(RGBButton1.eWhite);
   }
 
-  if( RGBButton2.getButtonStatus() ) {   // 按键2, 按下亮绿色
+  if( RGBButton2.getButtonStatus() ) {   // button 2, show green LED when pressed
     flag2 = 1;
     RGBButton2.setRGBColor(RGBButton2.eGreen);
     delay(50);
@@ -93,7 +93,7 @@ void loop()
     RGBButton2.setRGBColor(RGBButton2.eWhite);
   }
 
-  if( RGBButton3.getButtonStatus() ) {   // 按键3, 按下亮蓝色
+  if( RGBButton3.getButtonStatus() ) {   // button 3, show blue LED when pressed
     flag3 = 1;
     RGBButton3.setRGBColor(RGBButton3.eBlue);
     delay(50);
