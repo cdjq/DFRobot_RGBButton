@@ -2,7 +2,7 @@
 '''!
   @file  button_cascade.py
   @brief  Button cascade function demonstration
-  @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default, after the button is pressed, they change to red, green, and blue LEDs correspondingly
+  @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default. When button pressed, they change to red, green, and blue LEDs correspondingly
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -50,7 +50,7 @@ def setup():
   print("RGBButton begin successfully!\n")
 
   '''
-    # @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+    # @brief Set the basic seven colors, and white & black (white and black correspond to LED on and off respectively)
     # @param color - The corresponding values of the basic seven colors and white & black: 
     # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
   '''
