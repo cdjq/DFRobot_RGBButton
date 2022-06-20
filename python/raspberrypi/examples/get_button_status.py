@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*
 '''!
   @file  get_button_status.py
-  @brief  按键功能演示
-  @details  按键按下亮红灯， 松开灭灯
+  @brief  Button functon demostration 
+  @details  The LED turns on in red when button pressed, and goes off when released 
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -45,17 +45,17 @@ def setup():
 def loop():
   global flag
   '''
-    # @brief 获取模块按键状态
-    # @return 模块当前的按键状态:
-    # @retval   true - 按键按下
-    # @retval   false - 按键未按下
+    # @brief Get module button status 
+    # @return Module current button status: 
+    # @retval   true - Button pressed 
+    # @retval   false - Button not pressed
   '''
   if RGBButton.get_button_status() :
     flag = 1
 
     '''
-      # @brief 设置七种基础颜色以及白黑(白黑对应亮灭)
-      # @param color - 七种基础颜色以及白黑对应的值: 
+      # @brief Set the 7 basic colors and white & black(white and black correspond to led on and off) 
+      # @param color - The corresponding values of seven basic colors and white & black: 
       # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
     '''
     RGBButton.set_RGB_color(RGBButton.e_red)
@@ -63,7 +63,7 @@ def loop():
     time.sleep(0.05)
   elif 1 == flag  :
     flag = 0
-    RGBButton.set_RGB_color(RGBButton.e_black)   # 按键释放后灭灯
+    RGBButton.set_RGB_color(RGBButton.e_black)   # Led turns off when button released. 
 
 
 if __name__ == "__main__":
