@@ -1,7 +1,7 @@
 /*!
  * @file  getButtonStatus.ino
  * @brief  Button function demonstration
- * @details  The LED shows red light when the button is pressed, and is off when released
+ * @details  The LED shows red light when the button is pressed, and turns off when released
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -59,8 +59,8 @@ void loop()
   if( RGBButton.getButtonStatus() ) {
     flag = 1;
     /**
-     * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
-     * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to turning LED on and off respectively): 
+     * @brief Set the basic seven colors, and white & black (white and black correspond to LED on and off respectively)
+     * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to LED on and off respectively): 
      * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
      * @return None
      */
