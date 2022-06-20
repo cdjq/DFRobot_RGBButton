@@ -1,6 +1,6 @@
 /*!
  * @file  breatheLight.ino
- * @brief  Breathing light function demonstration
+ * @brief  Breathing lights function demonstration
  * @details  The button RGB LED presents a breathing light effect, and turns red when the button is pressed.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
