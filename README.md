@@ -1,7 +1,7 @@
 # DFRobot_RGBButton
 * [中文版](./README_CN.md)
 
-This RGB LED button can be set to different colors via I2C. And the button status can be obtained via either I2C or the interrupt pin. The address DIP switch allows cascading multiple buttons.
+This RGB LED button module can be set to different colors via I2C. And the button status can be obtained via either I2C or the interrupt pin. The address DIP switch allows cascading multiple buttons.
 
 ![产品实物图](./resources/images/RGBButton.png)
 
@@ -25,7 +25,7 @@ This RGB LED button can be set to different colors via I2C. And the button statu
 * There are seven system-defined colors, red, orange, yellow, green, indigo, blue, and purple; users can also customize the color by changing RGB values
 * Users can control the brightness of RGB LEDs by configuring PWM signal, the period and pulse width are configured independently
 * I2C address can be set by the DIP switch
-* The button can indicate interrupt status, normal button status for low level, pressed button for high level
+* The button can indicate interrupt status, low level when button released, high level when button pressed
 
 
 ## Installation
