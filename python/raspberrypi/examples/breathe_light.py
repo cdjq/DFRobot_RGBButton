@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 '''!
   @file  breathe_light.py
-  @brief  Breathing light function demonstration
+  @brief  Breathing lights function demonstration
   @details  The button RGB LED presents a colorful breathing light effect, and turns red when the button is pressed.
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
@@ -53,7 +53,7 @@ def loop():
   '''
   if RGBButton.get_button_status() :
     '''
-      # @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+      # @brief Set the basic seven colors, and white & black (white and black correspond to LED on and off respectively)
       # @param color - The corresponding values of the basic seven colors and white & black: 
       # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
     '''
