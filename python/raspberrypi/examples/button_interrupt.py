@@ -2,7 +2,7 @@
 '''!
   @file  button_interrupt.py
   @brief  Button interrupt routine
-  @details  The RGB LED rotates the colors of red, green and blue repeatedly, and shows white when the button is pressed.
+  @details  The RGB LED turns on in red, green and blue repeatedly, and shows white when the button is pressed.
   @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @license  The MIT License (MIT)
   @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -63,7 +63,7 @@ def loop():
   global flag, temp
 
   '''
-    # @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
+    # @brief Set the basic seven colors, and white & black (white and black correspond to LED on and off respectively)
     # @param color - The corresponding values of the basic seven colors and white & black: 
     # @n  e_red, e_orange, e_yellow, e_green, e_cyan, e_blue, e_purple, e_white, e_black
   '''
@@ -75,11 +75,11 @@ def loop():
     for j in range(0, count):
       if 3 == flag:   # When the button is pressed, an interrupt occurs, change to white
         RGBButton.set_RGB_color(color_buf[flag])
-      if 4 == temp:   # 当按键释放，中断产生，设置回按下之前的颜色
+      if 4 == temp:   
         temp = 0
         RGBButton.set_RGB_color(color_buf[flag])
 
-  # RGB灯循环切换红绿蓝三色
+  # RGB LED switches color red, green and blue repeatedly
   if 2 > flag :
     flag += 1
   elif 2 == flag :
