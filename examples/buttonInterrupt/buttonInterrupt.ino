@@ -1,7 +1,7 @@
 /*!
  * @file  buttonInterrupt.ino
  * @brief  Button interrupt routine
- * @details  The RGB LED rotates the colors of red, green and blue repeatedly, and shows white when the button is pressed.
+ * @details  The RGB LED turns on in red, green and blue repeatedly, and shows white when the button is pressed.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -101,8 +101,8 @@ DFRobot_RGBButton::eGeneralRGBValue_t colorBuf[4] = {RGBButton.eRed, RGBButton.e
 void loop()
 {
   /**
-   * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
-   * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to turning LED on and off respectively): 
+   * @brief Set the basic seven colors, and white & black (white and black correspond to LED on and off respectively)
+   * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to LED on and off respectively): 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
