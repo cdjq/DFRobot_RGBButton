@@ -1,7 +1,7 @@
 /*!
  * @file  buttonCascade.ino
  * @brief  Button cascade function demonstration
- * @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default, after the button is pressed, they change to red, green, and blue LEDs correspondingly.
+ * @details  Cascade 3 button modules via I2C, the 3 modules all show white LEDs by default. When button pressed, they change to red, green, and blue correspondingly.
  * @copyright  Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license  The MIT License (MIT)
  * @author  [qsjhyy](yihuan.huang@dfrobot.com)
@@ -55,8 +55,8 @@ void setup(void)
   Serial.println("Begin ok!\n");
 
   /**
-   * @brief Set the basic seven colors, and white & black (white and black correspond to turning LED on and off respectively)
-   * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to turning LED on and off respectively): 
+   * @brief Set the basic seven colors, and white & black (white and black correspond to LED on and off respectively)
+   * @param color - The corresponding values of the basic seven colors and white & black (white and black correspond to LED on and off respectively): 
    * @n  eRed, eOrange, eYellow, eGreen, eCyan, eBlue, ePurple, eWhite, eBlack
    * @return None
    */
