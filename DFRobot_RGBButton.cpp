@@ -95,6 +95,7 @@ void DFRobot_RGBButton::writeReg(uint8_t reg, const void * pBuf, size_t size)
   }
   uint8_t * _pBuf = (uint8_t *)pBuf;
 
+  _pWire->setClock(100000);
   _pWire->beginTransmission(_deviceAddr);
   _pWire->write(reg);
 
@@ -112,6 +113,7 @@ size_t DFRobot_RGBButton::readReg(uint8_t reg, void * pBuf, size_t size)
   }
   uint8_t * _pBuf = (uint8_t *)pBuf;
 
+  _pWire->setClock(100000);
   _pWire->beginTransmission(_deviceAddr);
   _pWire -> write(reg);
   if(0 != _pWire->endTransmission()) {   // Used Wire.endTransmission() to end a slave transmission started by beginTransmission() and arranged by write().
